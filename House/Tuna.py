@@ -21,7 +21,7 @@ def rec(l,w):
 
 def tri(b,a):
     ''' Draw triangle
-    b(float): base
+    b(int): base
     a(degree): angle'''
     Tuan_br.pendown()
     Tuan_br.fd(b)
