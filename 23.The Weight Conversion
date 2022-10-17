@@ -1,0 +1,57 @@
+
+from tkinter import*
+
+
+window=Tk()
+
+# window.resizable(width=False, height=False)
+
+
+def from_kg():
+    kg = ent1.get()
+    gram = float(kg)*1000
+    pound = float(kg)*2.20462
+    ounce = float(kg)*35.274
+    t1.delete("1.0",END)
+    t1.insert(END,gram)
+    
+    t2.delete("1.0",END)
+    t2.insert(END,pound)
+    
+    t3.delete("1.0",END)
+    t3.insert(END,ounce)
+    
+window.title("WC")
+window.resizable(width=False, height=False)
+
+lbl = Label(window,text = "Enter the weight in kg")
+kg_value =StringVar()
+ent1= Entry(window,textvariable= kg_value)
+lb1 = Label(window,text="Gram")
+lb2 = Label(window,text = "pounds")
+lb3 = Label(window,text="Ounce")
+
+t1 = Text(window, height = 1, width = 20)
+t2 = Text(window, height = 1, width = 20)
+t3 = Text(window, height = 1, width = 20)
+ 
+b1 =Button(window, text="Convert",command=from_kg)
+
+lbl.grid(row =0, column = 0)
+ent1.grid(row = 0, column= 1)
+lb1.grid(row =1, column =0)
+lb2.grid(row =1, column =1)
+lb3.grid(row =1,column =2)
+t1.grid(row=2, column=3)
+t2.grid(row=2, column=1)
+t1.grid(row=2, column=0)
+t3.grid(row=2,column=2)
+b1.grid(row=0, column=2)
+
+
+
+
+
+
+
+window.mainloop()
